@@ -1,0 +1,25 @@
+.form-contenteditable {
+	@apply relative py-2.25 border-x-[1rem] border-y border-transparent outline-0 overflow-auto whitespace-pre focus:ring-0 empty:after:content-[attr(placeholder)] after:block after:text-grey-light after:pointer-events-none;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	appearance: textfield;
+
+	&__tag {
+		@apply bg-black inline-block align-bottom overflow-hidden text-actions px-2 py-1 mx-1.5 font-medium rounded-md select-none focus:outline-0 hover:bg-grey-mid selection:bg-transparent;
+		animation-duration: 1s;
+		animation-name: field-tag-enter;
+
+		&--selected {
+			@apply bg-green text-black hover:bg-green;
+		}
+	}
+}
+
+@keyframes field-tag-enter {
+	50% {
+		@apply bg-grey-mid  ring-2 ring-grey-mid;
+	}
+}

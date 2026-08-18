@@ -1,0 +1,30 @@
+<svg viewBox="0 0 150 60" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;"  id="chronology-black">
+    <g transform="matrix(0.075089,0,0,0.075089,0.000002,0.000043)">
+        <g transform="matrix(1.372302,0,0,1.34331,-198.561151,-207.042254)">
+            <ellipse cx="436.173" cy="451.9" rx="291.481" ry="297.772" style="fill:rgb(139,92,246);"/>
+        </g>
+        <g transform="matrix(0.818512,0,0,0.821488,72.595281,71.404959)">
+            <path d="M400,82.831L400,400L688.86,400" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:50.81px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,-1.048493,1.048493)">
+            <path d="M57.667,374.312L96.461,398.952L57.667,423.591L18.873,398.952L57.667,374.312Z" style="fill-rule:nonzero;stroke:black;stroke-width:8.33px;"/>
+        </g>
+        <g transform="matrix(0,-1,1,0,1.048493,112.278342)">
+            <path d="M57.667,374.312L96.461,398.952L57.667,423.591L18.873,398.952L57.667,374.312Z" style="fill-rule:nonzero;stroke:black;stroke-width:8.33px;"/>
+        </g>
+        <g transform="matrix(0,-1,1,0,1.048493,803.235092)">
+            <path d="M57.667,374.312L96.461,398.952L57.667,423.591L18.873,398.952L57.667,374.312Z" style="fill-rule:nonzero;stroke:black;stroke-width:8.33px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,687.811271,1.048493)">
+            <path d="M57.667,374.312L96.461,398.952L57.667,423.591L18.873,398.952L57.667,374.312Z" style="fill-rule:nonzero;stroke:black;stroke-width:8.33px;"/>
+        </g>
+    </g>
+    <g transform="matrix(0.936724,0,0,0.911472,1.917388,2.018036)">
+        <path d="M51.931,9.475C29.099,-14.522 4.908,13.581 4.908,13.581C4.908,13.581 -10.186,35.67 12.956,54.193C36.099,72.716 55.978,44.287 55.978,44.287" style="fill:none;stroke:black;stroke-width:9.02px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,-5.076358,4.497805)">
+        <g transform="matrix(22.916667,0,0,22.916667,155.085253,31.572771)">
+        </g>
+        <text x="63.385px" y="31.573px" style="font-family:'GoudyOldStyleT-Regular', 'Goudy Old Style', serif;font-stretch:semi-expanded;font-size:22.917px;">hr<tspan x="83.415px 94.974px " y="31.573px 31.573px ">on</tspan>ology</text>
+    </g>
+</svg>

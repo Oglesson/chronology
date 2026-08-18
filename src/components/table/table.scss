@@ -1,0 +1,309 @@
+.table {
+	@apply w-full border-separate scroll-mt-5;
+
+	&__responsive {
+		//@apply overflow-auto;
+	}
+
+	&--header {
+		.table__thead {
+			clip-path: inset(0 0 0.75rem 0 round 0.375rem);
+		}
+
+		.table__th {
+			@apply bg-grey-mid pt-3 pb-6;
+			@apply dark:bg-black;
+		}
+
+		.table__tbody {
+			&--hover:hover,
+			&--hover:focus-visible {
+				.table__td {
+					@apply bg-background/50;
+				}
+			}
+
+			&--hover:has(:focus-visible) {
+				.table__td {
+					@apply bg-background/50;
+				}
+			}
+
+			&--highlight,
+			&--highlight:hover,
+			&--highlight:focus-visible {
+				@apply z-50;
+
+				.table__td {
+					@apply bg-grey-lighter;
+					@apply dark:bg-black;
+				}
+			}
+
+			&--highlight:has(:focus-visible) {
+				@apply z-50;
+
+				.table__td {
+					@apply bg-grey-lighter;
+					@apply dark:bg-black;
+				}
+			}
+		}
+	}
+
+	&--border {
+		.table__tbody {
+			.table__td {
+				@apply border-t border-t-grey-mid;
+
+				&--actions {
+					@apply border-transparent #{!important};
+				}
+			}
+
+			&:first-of-type {
+				.table__td {
+					@apply border-t-transparent;
+				}
+			}
+
+			&:last-of-type {
+				.table__td {
+					@apply border-b border-b-grey-mid;
+				}
+			}
+
+			&--active {
+				+ .table__tbody {
+					.table__td {
+						@apply border-t-white;
+					}
+				}
+
+				&:last-of-type {
+					.table__td {
+						@apply border-b-white;
+					}
+				}
+			}
+
+			&--hover:hover,
+			&--highlight,
+			&--highlight:hover {
+				.table__td {
+					@apply border-t-transparent;
+				}
+
+				&:last-of-type {
+					.table__td {
+						@apply border-b-transparent;
+					}
+				}
+
+				&:not(.table__tbody--dragging:not(*:first-of-type))
+					+ .table__tbody {
+					.table__td {
+						@apply border-t-transparent;
+					}
+				}
+				// & + .table__tbody {
+				// 	.table__td {
+				// 		@apply border-t-transparent;
+				// 	}
+				// }
+			}
+		}
+	}
+
+	&__tbody {
+		@apply relative;
+
+		&--hover:hover,
+		&--hover:focus-visible,
+		&--highlight,
+		&--highlight:hover,
+		&--highlight:focus-visible {
+			.table__td {
+				&:not(.table__td ~ .table__td) {
+					@apply rounded-l-md;
+				}
+
+				&:last-child {
+					@apply rounded-r-md;
+				}
+			}
+		}
+
+		&--hover:has(:focus-visible),
+		&--highlight:has(:focus-visible) {
+			.table__td {
+				&:not(.table__td ~ .table__td) {
+					@apply rounded-l-md;
+				}
+
+				&:last-child {
+					@apply rounded-r-md;
+				}
+			}
+		}
+
+		&--hover:hover,
+		&--hover:focus-visible {
+			@apply z-20;
+
+			.table__td {
+				@apply bg-grey-lightest;
+				@apply dark:bg-black-subtle;
+			}
+		}
+
+		&--hover:has(:focus-visible) {
+			@apply z-20;
+
+			.table__td {
+				@apply bg-grey-lightest;
+				@apply dark:bg-black-subtle;
+			}
+		}
+
+		&--highlight,
+		&--highlight:hover,
+		&--highlight:focus-visible {
+			@apply z-50;
+
+			.table__td {
+				@apply bg-grey-lighter;
+				@apply dark:bg-black;
+			}
+		}
+
+		&--highlight:has(:focus-visible) {
+			@apply z-50;
+
+			.table__td {
+				@apply bg-grey-lighter;
+				@apply dark:bg-black;
+			}
+		}
+
+		&--draggable {
+			@apply cursor-grab;
+		}
+
+		&--dragging {
+			@apply cursor-grabbing;
+		}
+
+		&--disabled {
+			@apply text-grey-mid select-none;
+		}
+
+		&:has(.tooltip[open]) {
+			@apply z-100;
+		}
+	}
+
+	&__pre-heading {
+		@apply px-3 pb-7 align-middle text-left text-pre-heading font-mono font-light uppercase;
+	}
+
+	&__th,
+	&__td {
+		@apply px-3 align-middle text-left;
+
+		&--left {
+			@apply text-left;
+		}
+
+		&--right {
+			@apply text-right;
+		}
+
+		&--center {
+			@apply text-center;
+		}
+
+		&--top {
+			@apply align-top;
+		}
+
+		&--middle {
+			@apply align-middle;
+		}
+
+		&--bottom {
+			@apply align-bottom;
+		}
+	}
+
+	&__th {
+		@apply pb-12 text-grey-light font-medium select-none;
+
+		&--sortable {
+			@apply cursor-pointer hover:text-current;
+		}
+
+		&--actions {
+			@apply p-0 w-0;
+		}
+	}
+
+	&__td {
+		@apply py-3 h-14;
+
+		&--actions {
+			@apply sticky z-10 right-0 w-0 text-right bg-none;
+		}
+	}
+
+	&__heading {
+		@apply inline-flex items-center;
+	}
+
+	&__sort {
+		@apply flex flex-col justify-center ml-3.5 h-0;
+
+		&-asc,
+		&-desc {
+			@apply flex-none w-3.5 h-3.5 -my-1;
+		}
+
+		&-asc {
+			@apply rotate-180;
+		}
+	}
+
+	&__link {
+		@apply absolute z-10 inset-0 rounded-md;
+	}
+
+	&-pagination {
+		@apply select-none;
+
+		&__toolbar {
+			@apply flex justify-between items-center w-full mt-7 pt-3.5 border-t border-t-grey-mid;
+
+			.table--border &,
+			.table--no-pagination-border & {
+				@apply mt-0 border-t-0;
+			}
+		}
+
+		&__actions {
+			@apply flex;
+		}
+
+		&__button {
+			@apply flex items-center justify-center w-10 h-8 ml-2.5 text-black border border-grey-mid rounded-full hover:bg-grey-mid hover:text-white;
+			@apply dark:text-white;
+
+			&[disabled] {
+				@apply bg-transparent opacity-30 text-current;
+			}
+		}
+
+		&__text {
+			@apply text-grey-light;
+		}
+	}
+}

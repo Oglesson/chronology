@@ -1,0 +1,9 @@
+@layer base {
+	.grid-container {
+		@apply grid gap-4.75 grid-cols-12;
+
+		&-5 {
+			@apply grid gap-4.75 grid-cols-5;
+		}
+	}
+}

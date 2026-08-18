@@ -1,0 +1,5 @@
+@layer base {
+	body {
+		@apply font-sans text-body h-full bg-gradient-light bg-fixed text-black dark:bg-gradient-dark dark:text-white;
+	}
+}

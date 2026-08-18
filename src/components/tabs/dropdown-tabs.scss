@@ -1,0 +1,46 @@
+.dropdown-tabs {
+	$open: "";
+	@apply relative z-20 text-actions;
+
+	&[open] {
+		$open: &;
+		@apply z-30;
+	}
+
+	&__summary {
+		@apply py-2 px-4 text-left rounded-full border border-grey-mid bg-transparent overflow-hidden select-none;
+
+		&:hover,
+		#{$open} & {
+			@apply bg-black-subtle text-white;
+		}
+
+		&-inner {
+			@apply flex justify-between items-center;
+		}
+
+		&-text {
+			@apply whitespace-nowrap overflow-hidden text-ellipsis;
+		}
+
+		&-icon {
+			@apply w-3.5 h-3.5 ml-2 flex-none;
+
+			#{$open} & {
+				@apply rotate-180;
+			}
+		}
+	}
+
+	&__menu {
+		@apply absolute top-full w-full px-1 py-1 my-1 rounded-md text-actions text-white bg-black-subtle border border-grey-mid;
+	}
+
+	&__button {
+		@apply block w-full my-0.5 px-3 py-1.75 text-left rounded-[0.1875rem] cursor-pointer select-none;
+
+		&:hover {
+			@apply text-green bg-black;
+		}
+	}
+}

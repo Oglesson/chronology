@@ -1,0 +1,16 @@
+@layer utilities {
+	.scrollbar {
+		&-none {
+			-ms-overflow-style: none;
+			scrollbar-width: none;
+
+			&::-webkit-scrollbar {
+				@apply hidden;
+			}
+		}
+
+		&-lock {
+			@apply overflow-hidden touch-none overscroll-none;
+		}
+	}
+}

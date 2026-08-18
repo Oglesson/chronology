@@ -1,0 +1,15 @@
+.style-status {
+	@apply py-2 pr-[10px] pl-[14px] rounded-full uppercase text-status select-none inline-flex items-center;
+
+	&--complete {
+		@apply text-green bg-green-dark;
+	}
+
+	&--in-progress {
+		@apply text-in-progress bg-in-progress bg-opacity-15;
+	}
+
+	&--costing {
+		@apply text-costing bg-costing bg-opacity-15;
+	}
+}

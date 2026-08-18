@@ -1,0 +1,96 @@
+.item-actions-menu {
+	$open: "";
+	@apply relative z-20 inline-flex text-actions text-left font-medium select-none;
+
+	&[open] {
+		$open: &;
+		@apply z-30;
+	}
+
+	&__summary {
+		@apply relative z-10 transition-opacity ease-hover duration-100;
+
+		&:focus-visible,
+		&:hover {
+			@apply opacity-100;
+		}
+
+		#{$open} & {
+			@apply opacity-100;
+		}
+	}
+
+	&__button {
+		@apply flex items-center justify-center overflow-hidden bg-transparent transition-[background,color] ease-hover duration-100;
+
+		&--default {
+			@apply w-8 h-8 rounded-sm;
+
+			&:hover {
+				@apply bg-black text-white;
+			}
+
+			#{$open} & {
+				@apply bg-grey-mid text-white;
+			}
+		}
+
+		&--select {
+			@apply text-button font-medium py-2.25 px-4 border border-grey-mid rounded-full box-border;
+
+			&:hover {
+				@apply border-black bg-black text-white;
+			}
+
+			#{$open} & {
+				@apply border-black bg-black text-white;
+			}
+		}
+	}
+
+	&__label {
+		&--default {
+			@apply sr-only;
+		}
+
+		&--select {
+			@apply ml-1;
+		}
+	}
+
+	&__popper {
+		@apply min-w-full;
+	}
+
+	&__menu {
+		@apply p-1 bg-black-subtle text-white cursor-default shadow-actions;
+
+		&--default {
+			@apply w-52 rounded-md;
+		}
+
+		&--select {
+			@apply w-full my-1 border border-grey-mid rounded-md;
+		}
+	}
+
+	&__item {
+		@apply my-0.5;
+
+		a,
+		button {
+			@apply block w-full px-3 py-1.75 my-0.5 text-left rounded-[0.1875rem] transition-colors ease-hover duration-100;
+
+			&:not([disabled]) {
+				&:hover,
+				&:focus {
+					@apply text-green bg-black cursor-pointer;
+				}
+			}
+
+			&[disabled] {
+				@apply opacity-30;
+			}
+		}
+	}
+}

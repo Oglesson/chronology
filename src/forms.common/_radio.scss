@@ -1,0 +1,30 @@
+.form-radio {
+	@apply appearance-none relative w-5 h-5 border;
+
+	&,
+	&:hover,
+	&:focus,
+	&:checked,
+	&:checked:hover,
+	&:checked:focus {
+		@apply bg-transparent shadow-none ring-0 ring-offset-0;
+	}
+
+	&,
+	&:checked {
+		@apply border-grey-light;
+		@apply dark:border-grey-mid;
+	}
+
+	&:hover,
+	&:focus,
+	&:checked:hover,
+	&:checked:focus {
+		@apply border-black;
+		@apply dark:border-white;
+	}
+
+	&:checked {
+		background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 18 18' fill='%2300F3BB' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='9' cy='9' r='4'/%3e%3c/svg%3e");
+	}
+}

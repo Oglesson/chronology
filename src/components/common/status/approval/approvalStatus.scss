@@ -1,0 +1,15 @@
+.approval-status {
+	@apply py-2.5 px-3.5 rounded-full uppercase text-status select-none min-w-[94px] text-center inline-block;
+
+	&--approved {
+		@apply text-green bg-green-dark;
+	}
+
+	&--declined {
+		@apply text-decline bg-decline bg-opacity-10;
+	}
+
+	&--to-do {
+		@apply text-white bg-grey-mid;
+	}
+}

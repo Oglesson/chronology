@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: chronology
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build:app
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      # Same-origin: the mock API is served by this same process under /chronology.
+      - key: VITE_API_ENDPOINT
+        value: /chronology
+      # Set these to the same values as your Auth0 application / API config.
+      - key: VITE_APP_CLIENTID
+        sync: false
+      - key: VITE_APP_ISSUER_DOMAIN
+        sync: false
+      - key: VITE_API_AUDIENCE_IDENTIFIER
+        sync: false

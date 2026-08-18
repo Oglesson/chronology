@@ -1,0 +1,54 @@
+.button {
+	$this: &;
+
+	@apply text-button font-medium py-3.75 px-4.75 border rounded-full box-border;
+
+	&--has-icon {
+		@apply flex items-center;
+	}
+
+	&--secondary,
+	&--tertiary {
+		@apply hover:bg-grey-mid focus:bg-grey-mid hover:text-white focus:text-white;
+	}
+
+	&--primary,
+	&--secondary {
+		&#{$this}--has-icon {
+			@apply py-2.25 px-4;
+		}
+	}
+
+	&--secondary,
+	&--tertiary {
+		@apply text-black border-grey-mid dark:text-white;
+	}
+
+	&--primary {
+		@apply bg-green border-green text-black text-center hover:bg-black focus:bg-black hover:text-white focus:text-white dark:hover:bg-white dark:focus:bg-white dark:hover:text-black dark:focus:text-black hover:border-black focus:border-black dark:hover:border-white dark:focus:border-white;
+	}
+
+	&--tertiary {
+		@apply text-button-tertiary py-2.25 px-3.5;
+
+		#{$this}__icon {
+			@apply mr-1.5 w-3.5 h-3.5;
+		}
+	}
+
+	&--decline {
+		@apply bg-decline border-decline;
+	}
+
+	&--circle {
+		@apply p-0 w-10 h-10 flex justify-center items-center;
+	}
+
+	&--solid {
+		@apply bg-grey-mid text-white;
+	}
+
+	&__icon {
+		@apply mr-1;
+	}
+}

@@ -1,0 +1,70 @@
+.select {
+	@apply first-letter:uppercase border text-left;
+
+	&__inner {
+		@apply flex justify-between items-center;
+	}
+
+	&__text {
+		@apply whitespace-nowrap overflow-hidden text-ellipsis first-letter:uppercase;
+
+		&:after {
+			content: "\a0";
+		}
+	}
+
+	&__icon {
+		@apply w-3.5 h-3.5 ml-2 flex-none;
+	}
+
+	&__popper {
+		@apply z-50 flex flex-col;
+	}
+
+	&__listbox {
+		@apply w-full max-h-full px-1 py-1 my-1 rounded-md text-actions  bg-black-subtle border border-grey-mid overflow-auto min-w-min; //text-white
+		@apply bg-white;
+		@apply dark:bg-black-subtle;
+
+		&--inline {
+			@apply my-1.5;
+		}
+
+		&:focus-visible {
+			@apply outline-none;
+		}
+	}
+
+	&--placeholder {
+		@apply text-grey-light;
+	}
+
+	&.Mui {
+		&-expanded:not(.form-input--error) {
+			@apply border-black;
+			@apply dark:border-white;
+		}
+	}
+}
+
+.option {
+	@apply my-0.5 px-3.5 py-1.75 rounded-[0.1875rem] cursor-pointer hover:bg-black hover:text-white first-letter:uppercase select-none;
+
+	&.Mui {
+		&Option {
+			&-highlighted,
+			&.Mui-focused {
+				@apply bg-black text-white;
+			}
+		}
+	}
+
+	&.Mui-selected,
+	&[aria-selected="true"] {
+		@apply bg-black text-green pointer-events-none;
+	}
+
+	&--disabled {
+		@apply pointer-events-none;
+	}
+}

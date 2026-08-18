@@ -1,0 +1,95 @@
+.editable {
+	$this: &;
+	@apply relative mr-32 flex-auto;
+
+	&--inline {
+		@apply mr-0;
+	}
+
+	&--active {
+	}
+
+	&--inactive {
+		@apply rounded-md;
+	}
+
+	&__fieldset {
+		@apply block relative min-w-0;
+	}
+
+	&__button {
+		@apply absolute inset-y-0 -inset-x-1.5 w-[calc(100%+0.75rem)] h-full rounded-md;
+
+		&:hover {
+			@apply bg-grey-lightest dark:bg-black-subtle;
+		}
+	}
+
+	&__label,
+	&__text,
+	&__input {
+		@apply min-h-[calc(1.2em+max((20px-0.2em),0px))] py-[max((10px-0.1em),0px)] leading-[1.2em];
+
+		&--inline {
+			@apply min-h-[1.2em] py-0;
+		}
+	}
+
+	&__label {
+		@apply block select-none text-left;
+	}
+
+	&__text {
+		@apply relative block overflow-hidden text-ellipsis pointer-events-none w-full;
+	}
+
+	&__input {
+		@apply w-full max-h-[calc(1.2em+max((20px-0.2em),0px))] max-w-[inherit] tracking-[inherit] caret-green text-ellipsis bg-transparent shadow-[inset_0_-1px] resize-none text-left;
+
+		&--inline {
+			@apply max-h-[1.2em] shadow-none;
+		}
+
+		&:focus {
+			@apply outline-none;
+		}
+	}
+
+	&__textarea {
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+
+	&__approval {
+		@apply absolute top-1/2 left-full -translate-y-1/2 flex ml-1.5;
+	}
+
+	&__accept,
+	&__cancel,
+	&__loading,
+	&__tooltip {
+		@apply flex justify-center items-center w-8 h-8;
+	}
+
+	&__accept,
+	&__cancel,
+	&__loading {
+		@apply text-white;
+	}
+
+	&__accept,
+	&__cancel {
+		@apply ml-1.5 rounded-sm text-white bg-black-subtle hover:bg-black;
+	}
+
+	&__loading {
+		@apply animate-spin-slow;
+	}
+
+	&__error {
+		@apply block mt-3 text-validation text-decline;
+	}
+}

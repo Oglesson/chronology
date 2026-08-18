@@ -1,0 +1,14 @@
+.modal {
+	&__overlay {
+		@apply fixed inset-y-0 left-0 w-screen z-100 p-6.5 bg-true-black bg-opacity-90 grid place-items-center overflow-hidden [scrollbar-gutter:stable];
+	}
+
+	&__content {
+		@apply bg-white rounded-md pt-16 pb-10 px-8 max-w-full max-h-full overflow-y-auto;
+		@apply dark:bg-black-subtle;
+
+		&--right {
+			@apply justify-self-end;
+		}
+	}
+}

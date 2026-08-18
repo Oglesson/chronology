@@ -1,0 +1,16 @@
+.horizontal-tabs {
+	@apply inline-flex text-actions;
+
+	&__item {
+		@apply flex first:rounded-l-md last:rounded-r-md -mr-px;
+	}
+
+	&__button {
+		@apply block py-2 px-4.5 text-grey-light font-medium border border-grey-mid rounded-[inherit];
+
+		&:hover,
+		&.Mui-selected {
+			@apply text-white bg-grey-mid;
+		}
+	}
+}

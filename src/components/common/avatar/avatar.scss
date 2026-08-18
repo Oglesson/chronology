@@ -1,0 +1,27 @@
+.avatar {
+	@apply rounded-full bg-black overflow-hidden;
+
+	&--xs {
+		@apply w-7 h-7;
+	}
+
+	&--sm {
+		@apply w-10 h-10;
+	}
+
+	&--md {
+		@apply w-14 h-14;
+	}
+
+	&--lg {
+		@apply w-23 h-23;
+	}
+
+	&--xl {
+		@apply w-36 h-36;
+	}
+
+	&--no-src {
+		@apply flex items-center justify-center;
+	}
+}

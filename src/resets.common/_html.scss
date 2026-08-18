@@ -1,0 +1,5 @@
+@layer base {
+	html {
+		@apply h-full w-full overflow-y-scroll [scrollbar-gutter:stable];
+	}
+}

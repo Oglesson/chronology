@@ -1,0 +1,5 @@
+@layer base {
+	:focus-visible {
+		@apply outline outline-1 outline-offset-2 outline-black dark:outline-white;
+	}
+}

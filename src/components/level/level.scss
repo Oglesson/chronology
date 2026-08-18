@@ -1,0 +1,48 @@
+.level {
+	@apply pointer-events-none select-none;
+	&__fieldset {
+		@apply grid;
+
+		&:hover {
+			--level-highlight: theme(colors.green);
+		}
+	}
+
+	&__label {
+		@apply block w-0 h-[5.375rem] px-[20%] row-span-1;
+
+		&-heading {
+			@apply block mb-1 text-grey-light text-pre-heading font-mono font-light uppercase;
+		}
+
+		&-value {
+			@apply block;
+		}
+	}
+
+	&__input {
+		@apply appearance-none row-start-2 h-[16.375rem] px-[20%] bg-[var(--level-highlight,theme(colors.grey-lighter))] bg-clip-content will-change-transform pointer-events-auto cursor-pointer;
+		@apply dark:bg-[var(--level-highlight,theme(colors.grey-mid))];
+
+		&:focus-visible {
+			@apply bg-green;
+		}
+
+		&:checked ~ & {
+			@apply bg-[var(--level-highlight,theme(colors.grey-light))];
+			@apply dark:bg-[var(--level-highlight,theme(colors.black))];
+		}
+
+		&:hover ~ & {
+			@apply bg-grey-lighter;
+			@apply dark:bg-grey-mid;
+		}
+
+		&:hover ~ &:checked ~ &,
+		&:checked ~ &:hover ~ &,
+		&:checked:hover ~ & {
+			@apply bg-grey-light;
+			@apply dark:bg-black;
+		}
+	}
+}

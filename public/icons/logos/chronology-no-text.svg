@@ -1,0 +1,20 @@
+<svg id="chron-icon" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+    <g transform="matrix(1.372302,0,0,1.34331,-198.561151,-207.042254)">
+        <ellipse cx="436.173" cy="451.9" rx="291.481" ry="297.772" style="fill:rgb(139,92,246);"/>
+    </g>
+    <g transform="matrix(0.818512,0,0,0.821488,72.595281,71.404959)">
+        <path d="M400,82.831L400,400L688.86,400" style="fill:none;stroke:black;stroke-width:50.81px;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,-1.048493,1.048493)">
+        <path d="M57.667,374.312L96.461,398.952L57.667,423.591L18.873,398.952L57.667,374.312Z" style="stroke:black;stroke-width:8.33px;"/>
+    </g>
+    <g transform="matrix(0,-1,1,0,1.048493,112.278342)">
+        <path d="M57.667,374.312L96.461,398.952L57.667,423.591L18.873,398.952L57.667,374.312Z" style="stroke:black;stroke-width:8.33px;"/>
+    </g>
+    <g transform="matrix(0,-1,1,0,1.048493,803.235092)">
+        <path d="M57.667,374.312L96.461,398.952L57.667,423.591L18.873,398.952L57.667,374.312Z" style="stroke:black;stroke-width:8.33px;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,687.811271,1.048493)">
+        <path d="M57.667,374.312L96.461,398.952L57.667,423.591L18.873,398.952L57.667,374.312Z" style="stroke:black;stroke-width:8.33px;"/>
+    </g>
+</svg>

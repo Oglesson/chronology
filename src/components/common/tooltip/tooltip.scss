@@ -1,0 +1,18 @@
+.tooltip {
+	$open: "";
+	@apply relative z-20 inline-flex text-actions text-center font-normal select-none text-grey-light transition-colors duration-100 ease-hover hover:text-black open:text-black;
+	@apply dark:hover:text-white dark:open:text-white;
+
+	&[open] {
+		$open: &;
+		@apply z-100;
+	}
+
+	&__button {
+		@apply block;
+	}
+
+	&__content {
+		@apply block p-3.5 m-2 w-max max-w-xs whitespace-normal rounded-[0.1875rem];
+	}
+}

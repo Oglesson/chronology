@@ -1,0 +1,9 @@
+@use "../src/fonts.common/" as *;
+@use "../src/layout.common/" as *;
+@use "../src/tailwind";
+@use "../src/resets.common/" as *;
+@use "../src/text.common/" as *;
+
+body.dark {
+	@apply bg-gradient-dark bg-fixed text-white;
+}

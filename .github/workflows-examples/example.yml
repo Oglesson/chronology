@@ -1,0 +1,67 @@
+# # An example of an azure deployment pipeline
+
+# trigger:
+#     branches:
+#         include:
+#             - test
+#         exclude:
+#             - dev
+#             - main
+
+# pool:
+#     vmImage: windows-latest
+
+# variables:
+#     - group: Environment-VG
+
+# steps:
+#     - task: PowerShell@2
+#       inputs:
+#           targetType: "inline"
+#           script: |
+#               $params = @"
+#               API_ENDPOINT=$(Timeline-API-Endpoint-Test-Staging)
+#               API_CLIENTID=$(Timeline-APP-ClientId-Test-Staging)
+#               API_ISSUER_DOMAIN=$(Issuer-Domain-Test-Staging)
+#               API_AUDIENCE_IDENTIFIER=$(Timeline-API-Audience-Identifier)
+#               API_APPROVED_IDENTIFIER=$(Timeline-API-Approved-Identifier)
+#               "@
+#               Add-Content -Path '$(Build.Repository.LocalPath)\$(Env-Filename)' $params
+#       displayName: "Create environment configuration file for qa release"
+
+#     - task: NodeTool@0
+#       inputs:
+#           versionSpec: "18.x"
+#       displayName: "Install Node.js"
+
+#     - script: npm install
+#       displayName: "npm install"
+
+#     - script: npm run build:app
+#       displayName: "npm build app"
+
+#     - task: ArchiveFiles@2
+#       displayName: "Creating zip file"
+#       inputs:
+#           rootFolderOrFile: "dist"
+#           includeRootFolder: false
+#           archiveType: "zip"
+#           archiveFile: '$(Build.Repository.LocalPath)\Timeline-Frontend-$(Build.BuildNumber).zip'
+#           replaceExistingArchive: true
+#           verbose: true
+
+#     - task: CopyFiles@2
+#       inputs:
+#           sourceFolder: "$(Build.Repository.LocalPath)"
+#           contents: "Timeline-Frontend-$(Build.BuildNumber).zip"
+#           targetFolder: "$(Build.ArtifactStagingDirectory)"
+#           overWrite: true
+#           verbose: true
+#       displayName: "Copy zip file from $(Build.Repository.LocalPath) to artifact staging of $(Build.ArtifactStagingDirectory)"
+
+#     - task: PublishPipelineArtifact@1
+#       inputs:
+#           artifactName: timeline-frontend
+#           targetPath: "$(Build.ArtifactStagingDirectory)"
+#           publishLocation: "pipeline"
+#       displayName: "Publish artifact"

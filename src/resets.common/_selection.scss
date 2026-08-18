@@ -1,0 +1,7 @@
+@layer base {
+	:root {
+		::selection {
+			@apply bg-green text-black;
+		}
+	}
+}
